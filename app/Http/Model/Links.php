@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Links extends Model
 {
-    protected $table = 'Links';
+    protected $table = 'links';
     //
     public $timestamps = false;
 
