@@ -13,9 +13,6 @@ class LoginController extends AdminBaseController
 {
     public function login()
     {
-        $_SESSION['t'] = 'tttt';
-        dd($_SESSION['t']);
-
         $input = Input::All();
         if (!empty($input)) {
             if (empty($input['username'])) {
