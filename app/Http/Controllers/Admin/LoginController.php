@@ -13,9 +13,11 @@ class LoginController extends AdminBaseController
 {
     public function login()
     {
+        $_SESSION['t'] = 'tttt';
+        dd($_SESSION['t']);
+
         $input = Input::All();
         if (!empty($input)) {
-            dd($_SESSION);
             if (empty($input['username'])) {
                 return back()->with('msg','请输入用户名');
             }
@@ -25,12 +27,13 @@ class LoginController extends AdminBaseController
             if (empty($input['code'])) {
                 return back()->with('msg','请输入验证码');
             }
-            $realCode = new \Code;
-            $codeValue = $realCode->get();
-            if (strtoupper($input['code']) != strtoupper($codeValue)) {
-                //session(['msg'=>'验证码错误']);
-                return back()->with('msg','验证码错误');
-            }
+            //TODO session取不到code
+//            $realCode = new \Code;
+//            $codeValue = $realCode->get();
+//            if (strtoupper($input['code']) != strtoupper($codeValue)) {
+//                //session(['msg'=>'验证码错误']);
+//                return back()->with('msg','验证码错误');
+//            }
 
             $userinfo = User::where('name',$input['username'])->first();
             if (empty($userinfo)) {
