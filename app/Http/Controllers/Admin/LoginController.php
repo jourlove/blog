@@ -13,11 +13,9 @@ class LoginController extends AdminBaseController
 {
     public function login()
     {
-        $_SESSION['t'] = 'tttt';
-        dd($_SESSION['t']);
-        
         $input = Input::All();
         if (!empty($input)) {
+            dd($_SESSION);
             if (empty($input['username'])) {
                 return back()->with('msg','请输入用户名');
             }
