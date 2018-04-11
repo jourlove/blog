@@ -14,8 +14,12 @@ class UserTableSeeder extends Seeder
         $data = [
             [
                 'name'=>'admin',
-                'password'=>'eyJpdiI6InFIdGlvdVcyRGgyOU05THpCXC9saGlRPT0iLCJ2YWx1ZSI6ImYzc1ZvbGNId1I2MFwvRWRoVFRiRmdnPT0iLCJtYWMiOiIyOGQ3MDQ5ZGNjMzQ3Y2M0YzIwZDc2MDhmYjAzMTQ0MDc0ZDdhYzZhNDNiZTdiYjE3YWQxNzQ4ZjRlZDFmMGJmIn0=',
-            ]
+                'password'=>'eyJpdiI6IkFlcnA0bFhBVEhIbmtoMXM3MzJyVGc9PSIsInZhbHVlIjoiTUFkZ2NKMTFOeWpGNDdQOThcL1Fhd0E9PSIsIm1hYyI6Ijc1NjFmMGE5ZWRmNDY4MzgzMzliYzlhODI3MjBlZjA2MTg1N2IxZTAwZTZlNzE4MzA2M2YzNTNiZjVkZGU4MjAifQ=',
+            ],
+            [
+                'name'=>'test',
+                'password'=>'eyJpdiI6IkFlcnA0bFhBVEhIbmtoMXM3MzJyVGc9PSIsInZhbHVlIjoiTUFkZ2NKMTFOeWpGNDdQOThcL1Fhd0E9PSIsIm1hYyI6Ijc1NjFmMGE5ZWRmNDY4MzgzMzliYzlhODI3MjBlZjA2MTg1N2IxZTAwZTZlNzE4MzA2M2YzNTNiZjVkZGU4MjAifQ=',
+            ],
         ];
         DB::table('user')->insert($data);
         //php artisan db:seed
