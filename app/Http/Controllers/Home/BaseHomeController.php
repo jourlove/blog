@@ -20,7 +20,7 @@ class BaseHomeController extends Controller
         //最新发布文章8篇
         $new = Article::select('id','title')->orderBy('create_time','desc')->take(8)->get();
 
-        $navs = Navs::all();
+        $navs = Navs::orderBy('order')->get();
 
         View::share('navs',$navs);
         View::share('hot',$hot);
