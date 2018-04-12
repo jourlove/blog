@@ -29,7 +29,7 @@ class AdminBaseController extends Controller
 
             $newName = date('ymdhis').mt_rand(1000,9999).'.'.$extention;
             $path = $file->move(base_path().'/uploads/',$newName);
-            $retpath =  'uploads\\'.$newName;
+            $retpath = Config::get('app.upload_path').$newName;
             $arr = array('code'=>0,'msg'=>null,'data'=>$retpath);
             return json_encode($arr);
         }

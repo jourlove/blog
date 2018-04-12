@@ -1,8 +1,8 @@
 @extends('layouts.home')
 @section('info')
-    <title>{{Config::get('web_config.web_title')}} - {{Config::get('web_config.seo_title')}}</title>
-    <meta name="keywords" content="{{Config::get('web_config.keywords')}}" />
-    <meta name="description" content="{{Config::get('web_config.description')}}" />
+    <title>{{$web_config['web_title']}} - {{$web_config['seo_title']}}</title>
+    <meta name="keywords" content="{{$web_config['keywords']}}" />
+    <meta name="description" content="{{$web_config['description']}}" />
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
             <ul>
                 @foreach($pics as $p)
                 <li>
-                    <a href="{{url('a/'.$p->id)}}"  target="_blank"><img src="{{url($p->thumb?$p->thumb:Config::get('web_config.default_art_thumb'))}}"/></a>
+                    <a href="{{url('a/'.$p->id)}}"  target="_blank"><img src="{{url($p->thumb?$p->thumb:$web_config['default_art_thumb'])}}"/></a>
                     <span>{{$p->title}}</span>
                 </li>
                 @endforeach
@@ -38,7 +38,7 @@
         <div class="bloglist left">
             @foreach($data as $d)
             <h3>{{$d->title}}</h3>
-            <figure><img src="{{url($d->thumb?$d->thumb:Config::get('web_config.default_art_thumb'))}}"></figure>
+            <figure><img src="{{url($d->thumb?$d->thumb:$web_config['default_art_thumb'])}}"></figure>
             <ul>
                 <p>{{$d->description}}</p>
                 <a title="{{$d->title}}" href="{{url('a/'.$d->id)}}" target="_blank" class="readmore">阅读全文>></a>

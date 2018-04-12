@@ -108,6 +108,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'upload_path' => 'storage\\uploads\\',
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

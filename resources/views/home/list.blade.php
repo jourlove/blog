@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('info')
-    <title>{{$cur_category->name}} - {{Config::get('web_config.web_title')}}</title>
+    <title>{{$cur_category->name}} - {{$web_config['web_title']}}</title>
     <meta name="keywords" content="{{$cur_category->keywords}}" />
     <meta name="description" content="{{$cur_category->description}}" />
 @endsection
@@ -11,7 +11,7 @@
             @foreach($data as $d)
             <h2>{{$d->title}}</h2>
             <p class="dateview"><span>发布时间：{{date('Y-m-d',$d->create_time)}}</span><span>作者：{{$d->author}}</span><span>分类：[<a href="{{url('category/'.$cur_category->id)}}">{{$cur_category->name}}</a>]</span></p>
-            <figure><img src="{{url($d->thumb?$d->thumb:Config::get('web_config.default_art_thumb'))}}"></figure>
+            <figure><img src="{{url($d->thumb?$d->thumb:$web_config->default_art_thumb)}}"></figure>
             <ul class="nlist">
                 <p>{{$d->description}}</p>
                 <a title="{{$d->title}}" href="{{url('a/'.$d->id)}}" target="_blank" class="readmore">阅读全文>></a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Article;
 use App\Http\Model\Navs;
+use App\Http\Model\WebConfig;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
@@ -24,5 +25,8 @@ class BaseHomeController extends Controller
         View::share('navs',$navs);
         View::share('hot',$hot);
         View::share('new',$new);
+
+        $config = WebConfig::pluck('content','var_name')->all();
+        View::share('web_config',$config);
     }
 }

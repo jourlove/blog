@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('info')
-    <title>{{$field->title}} - {{Config::get('web_config.web_title')}}</title>
+    <title>{{$field->title}} - {{$web_config['web_title']}}</title>
     <meta name="keywords" content="{{$field->keywords}}" />
     <meta name="description" content="{{$field->description}}" />
 @endsection

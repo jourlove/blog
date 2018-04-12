@@ -39,7 +39,7 @@
 @show
 
 <footer>
-    <p>{!! Config::get('web_config.copyright') !!} {!! Config::get('web_config.web_statics') !!}</p>
+    <p>{!! $web_config['copyright'] !!} {!! $web_config['web_statics'] !!}</p>
 </footer>
 </body>
 </html>
