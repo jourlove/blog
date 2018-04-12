@@ -173,8 +173,7 @@ class WebConfigController extends AdminBaseController
 
     public function putFile()
     {
-        $config = WebConfig::pluck('content','var_name')->all();
-        View::share('web_config',$config);
+//        $config = WebConfig::pluck('content','var_name')->all();
 //        $path = base_path().'\config\web_config.php';
 //        $str = '<?php return '.var_export($config,true).';';
 //        file_put_contents($path,$str);
