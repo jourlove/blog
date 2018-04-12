@@ -29,8 +29,9 @@ class AdminBaseController extends Controller
             $extention = $file->getClientOriginalExtension();
 
             $newName = date('ymdhis').mt_rand(1000,9999).'.'.$extention;
-            $path = $file->move(base_path().Config::get('app.upload_path'),$newName);
-            $retpath = Config::get('app.upload_path').$newName;
+            $uploadpath = Config::get('app.upload_path');
+            $path = $file->move(base_path().'/'.$uploadpath,$newName);
+            $retpath = $uploadpath.$newName;
             $arr = array('code'=>0,'msg'=>null,'data'=>$retpath);
             return json_encode($arr);
         }

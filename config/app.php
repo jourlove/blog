@@ -108,7 +108,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-    'upload_path' => 'storage\\uploads\\',
+    'upload_path' => 'storage/uploads/',
 
     /*
     |--------------------------------------------------------------------------
